@@ -1,0 +1,306 @@
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+  }
+
+  #box {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    transition: background-color 0.5s ease;
+  }
+
+  .boxc {
+    width: 100%;
+    height: 100vh;
+    flex: 1 0 auto;
+    scroll-snap-align: start;
+    position: relative;
+    transition: ease 2s;
+  }
+
+  .media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: ease 2s;
+  }
+
+  .media-container.audio {
+    background-color: rgba(0, 0, 0, 0.10);
+    transition: ease-in 2s;
+  }
+
+  .media-container img,
+  .media-container audio,
+  .media-container video {
+    max-width: 100%;
+    max-height: 100%;
+    transition: ease 2s;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 20px;
+    left: 35px;
+    color: #f66101;
+    font-size: 5vw;
+    cursor: pointer;
+    z-index: 1;
+    text-align: left;
+  }
+
+  .description {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .description.open {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .description-content {
+    max-width: 80%;
+    padding: 20px;
+    background-color: black;
+    border: 2px solid #f66101;
+    border-radius: 10%;
+    text-align: center;
+    color: white;
+  }
+  #close-button {
+    background: #f66101;
+    width: 200px;
+    height: 50px;
+    border: 0px;
+    border-radius: 15%;
+    color: white;
+  }
+  #barranavigation {
+    width: 50px;
+    height: 80%;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    background-color: transparent;
+    border-radius: 15%;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+#barranavigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+  ;
+}
+#barranavigation ul li {
+    padding: 5%;
+}
+#barranavigation ul li img {
+  width: 100%;
+  height: 100%;
+}
+  .cartaprincipalbtn {
+    width: 90%;
+    height: 30%;
+  }
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  #logotiktok {
+    width: 10%;
+    height: 23%;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    animation: animarbordeslogotiktok 1s linear infinite;
+  }
+
+  @keyframes animarbordeslogotiktok {
+    0%{border-color: gray;}
+    20%{border-color: green;}
+    40%{border-color: purple;}
+    60%{border-color: blue;}
+    80%{border-color: yellow;}
+    100%{border-color: red;}
+  } 
+
+
+  #loading-screen-text {
+    font-size: 54px;
+    color: orange;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #f66101, #f66101);
+    animation: fill 2s 2s linear infinite alternate;
+  }
+
+  @keyframes fill {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+  }
+
+
+  .boxwelcome {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, black, rgb(37, 40, 80));
+    position: fixed;
+    left: 0;
+    top: 80;
+    z-index:  9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .card {
+    width: 25%;
+    height: 80%;
+    border-radius: 7%;
+    animation: animarbordes 2s linear infinite;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    text-align: center;
+    background-image: url(../imagenes/fondos/happy.jpg);
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  @keyframes animarbordes {
+    0%{border-color: gray;}
+    20%{border-color: green;}
+    40%{border-color: purple;}
+    60%{border-color: blue;}
+    80%{border-color: yellow;}
+    100%{border-color: red;}
+  } 
+  .carta {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+  }
+  .logocarta {
+    width: 30%;
+    height: 15%;
+    transform: rotatez(12deg);
+    animation:  animarcarta 1s linear infinite alternate;
+  }
+
+  @keyframes animarcarta {
+    0%{width: 20%; height: 5%}
+    100%{width: 30%; height: 15%;}
+  }
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 760px){
+    
+  .boxwelcome {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, black, rgb(37, 40, 80));
+    position: fixed;
+    left: 0;
+    top: 80;
+    z-index:  9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .card {
+    width: 45%;
+    height: 80%;
+    border-radius: 7%;
+    animation: animarbordes 2s linear infinite;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    text-align: center;
+    background-image: url(../imagenes/fondos/happy.jpg);
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  @keyframes                           animarbordes {
+    0%{border-color: gray;}
+    20%{border-color: green;}
+    40%{border-color: purple;}
+    60%{border-color: blue;}
+    80%{border-color: yellow;}
+    100%{border-color: red;}
+  } 
+  .carta {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+  }
+  .logocarta {
+    width: 30%;
+    height: 15%;
+    transform: rotatez(12deg);
+    animation:  animarcarta 1s linear infinite alternate;
+  }
+
+  @keyframes animarcarta {
+    0%{width: 20%; height: 5%}
+    100%{width: 30%; height: 15%;}
+  }
+  
+  #logotiktok {
+    width: 20%;
+    height: 23%;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    animation: animarbordeslogotiktok 1s linear infinite;
+  }
+
+
+
+}
